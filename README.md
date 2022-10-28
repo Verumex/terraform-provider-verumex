@@ -35,3 +35,11 @@ In order to run the full suite of Acceptance tests, run `make testacc`.
 ```sh
 $ make testacc
 ```
+
+## Deploying a Release
+
+See [here](https://developer.hashicorp.com/terraform/tutorials/providers/provider-release-publish#create-a-provider-release)
+for details about how to deploy a new version of the provider. Basically
+you just add a tag with `git tag v...` and push it, the rest of the
+configuration is already in place. But check the GitHub Action (`release`)
+to ensure it worked as you expected.
