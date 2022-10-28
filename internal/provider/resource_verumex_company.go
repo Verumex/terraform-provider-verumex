@@ -8,20 +8,20 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 
-func resourceScaffolding() *schema.Resource {
+func verumexCompany() *schema.Resource {
 	return &schema.Resource{
 		// This description is used by the documentation generator and the language server.
-		Description: "Sample resource in the Terraform provider scaffolding.",
+		Description: "VmX Core Company Resource",
 
-		CreateContext: resourceScaffoldingCreate,
-		ReadContext:   resourceScaffoldingRead,
-		UpdateContext: resourceScaffoldingUpdate,
-		DeleteContext: resourceScaffoldingDelete,
+		CreateContext: verumexCompanyCreate,
+		ReadContext:   verumexCompanyRead,
+		UpdateContext: verumexCompanyUpdate,
+		DeleteContext: verumexCompanyDelete,
 
 		Schema: map[string]*schema.Schema{
-			"sample_attribute": {
+			"name": {
 				// This description is used by the documentation generator and the language server.
-				Description: "Sample attribute.",
+				Description: "The human-friendly name of the company.",
 				Type:        schema.TypeString,
 				Optional:    true,
 			},
@@ -29,36 +29,36 @@ func resourceScaffolding() *schema.Resource {
 	}
 }
 
-func resourceScaffoldingCreate(ctx context.Context, d *schema.ResourceData, meta any) diag.Diagnostics {
+func verumexCompanyCreate(ctx context.Context, d *schema.ResourceData, meta any) diag.Diagnostics {
 	// use the meta value to retrieve your client from the provider configure method
 	// client := meta.(*apiClient)
 
-	idFromAPI := "my-id"
+	idFromAPI := "sample-id"
 	d.SetId(idFromAPI)
 
 	// write logs using the tflog package
 	// see https://pkg.go.dev/github.com/hashicorp/terraform-plugin-log/tflog
 	// for more information
-	tflog.Trace(ctx, "created a resource")
+	tflog.Trace(ctx, "created a verumex company resource")
 
 	return diag.Errorf("not implemented")
 }
 
-func resourceScaffoldingRead(ctx context.Context, d *schema.ResourceData, meta any) diag.Diagnostics {
+func verumexCompanyRead(ctx context.Context, d *schema.ResourceData, meta any) diag.Diagnostics {
 	// use the meta value to retrieve your client from the provider configure method
 	// client := meta.(*apiClient)
 
 	return diag.Errorf("not implemented")
 }
 
-func resourceScaffoldingUpdate(ctx context.Context, d *schema.ResourceData, meta any) diag.Diagnostics {
+func verumexCompanyUpdate(ctx context.Context, d *schema.ResourceData, meta any) diag.Diagnostics {
 	// use the meta value to retrieve your client from the provider configure method
 	// client := meta.(*apiClient)
 
 	return diag.Errorf("not implemented")
 }
 
-func resourceScaffoldingDelete(ctx context.Context, d *schema.ResourceData, meta any) diag.Diagnostics {
+func verumexCompanyDelete(ctx context.Context, d *schema.ResourceData, meta any) diag.Diagnostics {
 	// use the meta value to retrieve your client from the provider configure method
 	// client := meta.(*apiClient)
 

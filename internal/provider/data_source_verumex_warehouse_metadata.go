@@ -7,17 +7,17 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 
-func dataSourceScaffolding() *schema.Resource {
+func verumexWarehouseMetadata() *schema.Resource {
 	return &schema.Resource{
 		// This description is used by the documentation generator and the language server.
-		Description: "Sample data source in the Terraform provider scaffolding.",
+		Description: "Warehouse metadata for the current environment.",
 
-		ReadContext: dataSourceScaffoldingRead,
+		ReadContext: dataSourceVerumexWarehouseMetadataRead,
 
 		Schema: map[string]*schema.Schema{
-			"sample_attribute": {
+			"warehouse_id": {
 				// This description is used by the documentation generator and the language server.
-				Description: "Sample attribute.",
+				Description: "The VmX Core identifier of the warehouse.",
 				Type:        schema.TypeString,
 				Required:    true,
 			},
@@ -25,11 +25,11 @@ func dataSourceScaffolding() *schema.Resource {
 	}
 }
 
-func dataSourceScaffoldingRead(ctx context.Context, d *schema.ResourceData, meta any) diag.Diagnostics {
+func dataSourceVerumexWarehouseMetadataRead(ctx context.Context, d *schema.ResourceData, meta any) diag.Diagnostics {
 	// use the meta value to retrieve your client from the provider configure method
 	// client := meta.(*apiClient)
 
-	idFromAPI := "my-id"
+	idFromAPI := "warehouse-id"
 	d.SetId(idFromAPI)
 
 	return diag.Errorf("not implemented")
